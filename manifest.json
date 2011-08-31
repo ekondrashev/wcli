@@ -9,7 +9,7 @@
   },
   "content_scripts": [ {
     "matches": ["http://*/*", "https://*/*"], 
-    "js": ["content.js"]
+    "js": ["refs/jquery-1.6.2.js","refs/jquery.hotkeys-0.7.9.min.js", "content.js"]
   }],
   "permissions": [
    "tabs",
