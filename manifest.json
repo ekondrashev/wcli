@@ -9,7 +9,7 @@
   },
   "content_scripts": [ {
     "matches": ["http://*/*", "https://*/*"], 
-	"css": ["refs/ui.theme.css", "refs/jquery-ui.css"],
+	"css": ["refs/ui.theme.css", "refs/jquery-ui.css","refs/frontend.css"],
     "js": ["refs/jquery.min.js", "refs/jquery-ui.min.js", "refs/jquery.bgiframe-2.1.2.js", "refs/jquery-ui-i18n.min.js", "refs/jquery.hotkeys-0.7.9.min.js", "content.js"]
   }],
   "permissions": [

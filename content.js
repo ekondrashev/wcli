@@ -340,6 +340,7 @@ function popup() {
 
 $("#project").autocomplete({
                 minLength: 0,
+                width:100,
                 source: links,
                 focus: function(event, ui){
                     $("#project").val(ui.item.label);
