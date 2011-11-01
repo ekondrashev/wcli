@@ -1,4 +1,4 @@
 
-.ui-autocomplete {background: #000; opacity:0.8; z-index: 10002 !important; width: 500px !important;overflow: hidden}
+.ui-autocomplete {background: #000 !important; opacity:0.8; z-index: 10002 !important; width: 500px !important;overflow: hidden}
 .ui-widget-content  a {color: #fff}
 .ui-widget-content li.ui-state-hover a {color: #4d4d4d}
