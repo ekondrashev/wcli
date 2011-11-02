@@ -203,7 +203,7 @@ bgImg.style.cssText = [
 'font-weight:bold;',
 'width:100%;',
 'height:95%;',
-'opacity:0.8;',
+'opacity:0.7;',
 'border-radius: 0 0 10px 10px;',
 'padding:0;',
 'margin:0;',
