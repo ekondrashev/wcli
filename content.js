@@ -324,6 +324,8 @@ function clickFunc() {
 	}
 $(document).ready(function() {
 	$("#sliderClose").click(clickFunc);
+
+
 });
 
 $(document).bind('keydown', 'Ctrl+c', clickFunc);
