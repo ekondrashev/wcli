@@ -198,7 +198,7 @@ var bgImg = document.createElement('div');
 bgImg.style.cssText = [
 'position: absolute;',
 'text-align:center;',
-'background-color:#000;',
+'background-color:#180a61;',
 'color:#333333;',
 'font-weight:bold;',
 'width:100%;',
