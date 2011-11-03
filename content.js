@@ -25,8 +25,7 @@ document.body.style.cssText = [
 'width: 300px;',
 '}',
 '#slider {',
-
-'position: absolute;',
+'position: fixed;',
 'background-image:url(' + chrome.extension.getURL("refs/slider.png") + ');',
 'background-repeat:no-repeat;',
 'background-position: bottom;',
@@ -71,7 +70,7 @@ var openCloseIdentifier = document.createElement('div');
 var slider = document.createElement('div');
 slider.id = "slider";
 slider.style.cssText = [
-'position: absolute;',
+'position: fixed;',
 'background-repeat:no-repeat;',
 'background-position: bottom;',
 'width: 264px;',
@@ -124,7 +123,7 @@ bgImg.style.cssText = [
 'font-weight:bold;',
 'width:100%;',
 'height:95%;',
-'opacity:0.7;',
+'opacity:0.8;',
 'border-radius: 0 0 10px 10px;',
 'padding:0;',
 'margin:0;',
@@ -172,27 +171,28 @@ sliderWrap.appendChild(slider);
 
 document.body.parentElement.insertBefore(sliderWrap, document.body);
 
-function clickFunc() {
-		if ($("#slider").css("margin-top") == "0px") {
-			$("#slider").animate({ 
+function clickFunc(status) {
+		if (($("#slider").css("margin-top") == "0px") || status=='close') {
+                        $("#slider").animate({
 				marginTop: "-47px"
 				}, 500 );		
 		} else {
 			$("#slider").animate({ 
 				marginTop: "0px"
-				}, 500 );	
-		
+				}, 500 );
+
+                        $("#slider input").focus();
 		}
   
 
 	}
+
 $(document).ready(function() {
 	$("#sliderClose").click(clickFunc);
-
-
 });
 
-$(document).bind('keydown', 'Shift+g', clickFunc);
+$(document).bind('keydown', 'esc',function(){clickFunc("close")} );
+$(document).bind('keydown', 'alt+g', clickFunc );
 
 $("#project").autocomplete({
                 minLength: 0,
