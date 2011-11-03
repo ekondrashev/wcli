@@ -261,51 +261,9 @@ openCloseWrap.style.cssText = [
 'opacity:0.8;',
 'left: 98px;',
 ].join(' ');
-//slider.appendChild(openCloseWrap);
-
-//var topMenuImage = document.createElement('a');
-//topMenuImage.setAttribute('href', '#');
-//topMenuImage.setAttribute('class' , "topMenuAction");
-//topMenuImage.innerHTML = '<img style="border:0;" src="' + imgURL + '" alt="open" />';
-//openCloseWrap.appendChild(topMenuImage);
-
-//sliderWrap.appendChild(openCloseIdentifier);
 sliderWrap.appendChild(slider);
 
-//sliderWrap.innerHTML= ['Topics currently trending on Twitter:',
-////'<div id="sliderWrap">',
-////		'<div id="openCloseIdentifier"></div>',
-//		'<div id="slider">',
-//			'<div id="sliderContent">',
-//				'Isnt this nice?',
-//			'</div>',
-//			'<div id="openCloseWrap">',
-//				'<a href="#" class="topMenuAction" id="topMenuImage">',
-//					'<img src="' + imgURL + '" alt="open" />',
-//				'</a>',
-//			'</div>',
-////		'</div>',
-//	'</div>'].join(' ');
 
-//sliderWrap.appendChild(title_dom);
-//for (var i=0,trend; trend = data.trends[i]; i++) {
-//      var link_dom = document.createElement('a');
-//      link_dom.setAttribute('href', trend.url)
-//      link_dom.innerText = trend.name;
-//      link_dom.style.color = '#000';
-//      sliderWrap.appendChild(document.createTextNode(' '));
-//      sliderWrap.appendChild(link_dom);
-//    }
-//    sliderWrap.style.cssText = [
-//      'background-color: #ffd700;',
-//      'background-image: -webkit-repeating-linear-gradient(' +
-//          '45deg, transparent, transparent 35px,' +
-//          'rgba(0,0,0,.1) 35px, rgba(0,0,0,.1) 70px);',
-//      'color: #000;',
-//      'padding: 10px;',
-//      'font: 14px Arial;'
-//    ].join(' ');
-//    document.body.style.cssText = 'position: relative';
 document.body.parentElement.insertBefore(sliderWrap, document.body);
 
 function clickFunc() {
@@ -328,17 +286,7 @@ $(document).ready(function() {
 
 });
 
-$(document).bind('keydown', 'Ctrl+c', clickFunc);
-
-chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
-	document.location=request.href;
-});
-
-
-function popup() {
-	alert('poped up');
-}
-
+$(document).bind('keydown', 'Alt+Shift+g', clickFunc);
 
 $("#project").autocomplete({
                 minLength: 0,
@@ -352,20 +300,12 @@ $("#project").autocomplete({
                 //                    $("#project").val(ui.item.label);
                 //                    $("#project-id").val(ui.item.value);
                 //                    $("#project-description").html(ui.item.href);
-                //                    $("#project-icon").attr("src", "images/" + ui.item.icon);
+                //                    $("#project-icon").attr("src", "images/" + ui.itepm.icon);
                 //                    
                 //                    return false;
                 select: function(event, ui){
-					alert('Selected!');
-//                    chrome.tabs.getSelected(null, function(tab){
-                        //chrome.tabs.sendRequest(tab.id, {
-                          //  "name": ui.item.label,
-                          //  "href": ui.item.href
-                        //}, function readResponse(){
-                        //    console.log("got response in popup");
-                        //});
-                        //window.close();
-                    //});
+
+	            document.location=ui.item.href;
                     return false;
                 }
             }).data("autocomplete")._renderItem = function(ul, item){

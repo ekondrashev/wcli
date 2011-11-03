@@ -1,7 +1,9 @@
 {
-  "name": "My First Extension",
+  "name": "wcli",
   "version": "1.0",
-  "description": "The first extension that I made.",
+  "description": "Web command line interface.
+Currently only go to link on web-page operation is implemented.
+Just hit \"Ctrl-x g\" and start typing the link name you want to visit.",
   "content_scripts": [ {
     "matches": ["http://*/*", "https://*/*"], 
 	"css": ["refs/ui.theme.css", "refs/jquery-ui.css","refs/frontend.css"],
