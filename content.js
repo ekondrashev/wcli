@@ -1,13 +1,4 @@
-//alert(chrome.extension.getURL("refs/header.js"));
-//var js = document.createElement("script");
-//
-//js.type = "text/javascript";
-//js.src = chrome.extension.getURL("refs/header.js");
-//
-//document.body.appendChild(js);
-
 var links = findLinks();
-//chrome.extension.sendRequest(links);
 
 function findLinks(){
     var links = [];
@@ -25,73 +16,10 @@ function findLinks(){
 }
 
 
-//$(document).ready(function(){
-//           var links = findLinks();
-//            var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
-//            $("#project").autocomplete(data);
-//})
-
-//        $(function(){
-//            //            var projects = [{
-//            //                value: "jquery",
-//            //                label: "jQuery",
-//            //                desc: "the write less, do more, JavaScript library",
-//            //                icon: "jquery_32x32.png"
-//            //            }, {
-//            //                value: "jquery-ui",
-//            //                label: "jQuery UI",
-//            //                desc: "the official user interface library for jQuery",
-//            //                icon: "jqueryui_32x32.png"
-//            //            }, {
-//            //                value: "sizzlejs",
-//            //                label: "Sizzle JS",
-//            //                desc: "a pure-JavaScript CSS selector engine",
-//            //                icon: "sizzlejs_32x32.png"
-//            //            }];
-//
-//            $("#project").autocomplete({
-//                minLength: 0,
-//                source: links,
-//                focus: function(event, ui){
-//                    $("#project").val(ui.item.label);
-//                    return false;
-//                },
-//                //                select: function(event, ui){
-//                //                    $("#project").val(ui.item.label);
-//                //                    $("#project-id").val(ui.item.value);
-//                //                    $("#project-description").html(ui.item.href);
-//                //                    $("#project-icon").attr("src", "images/" + ui.item.icon);
-//                //
-//                //                    return false;
-//                select: function(event, ui){
-//                    chrome.tabs.getSelected(null, function(tab){
-//                        chrome.tabs.sendRequest(tab.id, {
-//                            "name": ui.item.label,
-//                            "href": ui.item.href
-//                        }, function readResponse(){
-//                            console.log("got response in popup");
-//                        });
-//                        window.close();
-//                    });
-//                    return false;
-//                }
-//            }).data("autocomplete")._renderItem = function(ul, item){
-//                return $("<li></li>").data("item.autocomplete", item).append("<a>" + item.label + "<br>" + item.href + "</a>").appendTo(ul);
-//            };
-//        });
-
 var imgURL = chrome.extension.getURL("refs/open.png");
 var sliderWrap = document.createElement('div');
-//var title_dom = document.createElement('strong');
 
-//trends_dom.style.cssText = [
 document.body.style.cssText = [
-//'body {',
-//'margin: 0;',
-//'font-size:16px;',
-//'color: #000000;',
-//'font-family:Arial, Helvetica, sans-serif;',
-//'}',
 '#sliderWrap {',
 'margin: 0 auto;',
 'width: 300px;',
@@ -134,17 +62,10 @@ document.body.style.cssText = [
 
 sliderWrap.id = "sliderWrap"
 sliderWrap.style.cssText = [
-//'body {',
-//'margin: 0;',
-//'font-size:16px;',
-//'color: #000000;',
-//'font-family:Arial, Helvetica, sans-serif;',
-//'}',
-//'#sliderWrap {',
 'margin: 0 auto;',
 'width: 300px;'
-//'}'
 ]
+
 var openCloseIdentifier = document.createElement('div');
  openCloseIdentifier.id = "openCloseIdentifier";
 var slider = document.createElement('div');
@@ -215,21 +136,6 @@ bgImg.style.cssText = [
 bgImg.setAttribute('class' , "bgImg");
 sliderContent.appendChild(bgImg);
 
-/*LABEL SEARCH
-var label = document.createElement('label');
-label.setAttribute('type' , "text");
-label.innerText = "Go to (start typing a link):";
-label.style.cssText = [
-'position: relative;',
-'border-radius: 4px;',
-'z-index:20;',
-'color:#fff;',
-'font-size:9px;',
-'margin-top:10px;',
-'margin-right:8px;',
-].join(' ');
-sliderContent.appendChild(label);
-*/
 /*INPUT SEARCH*/
 var inputSearch = document.createElement('input');
 inputSearch.setAttribute('type' , "text");
