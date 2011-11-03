@@ -192,7 +192,7 @@ $(document).ready(function() {
 
 });
 
-$(document).bind('keydown', 'Alt+Shift+g', clickFunc);
+$(document).bind('keydown', 'Shift+g', clickFunc);
 
 $("#project").autocomplete({
                 minLength: 0,
