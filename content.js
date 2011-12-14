@@ -8,6 +8,7 @@ function findLinks(){
             value: document.links[i].text,
             label: document.links[i].text,
             href: document.links[i].href,
+	    link: document.links[i]
         });
 
 
@@ -194,12 +195,43 @@ $(document).ready(function() {
 $(document).bind('keydown', 'esc',function(){clickFunc("close")} );
 $(document).bind('keydown', 'alt+g', clickFunc );
 
+function hasClass(ele,cls) {
+	return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+
+function addClass(ele,cls) {
+	if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+}
+
+function removeClass(ele,cls) {
+	if (hasClass(ele,cls)) {
+    	var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+		ele.className=ele.className.replace(reg,' ');
+	}
+}
+
+
+function logFields(objName, obj) {
+	console.log(objName + ' fields');
+        for(var key in obj){
+            console.log(key);
+        }
+
+}
+var prevValue=null;
 $("#project").autocomplete({
                 minLength: 0,
                 width:100,
                 source: links,
                 focus: function(event, ui){
                     $("#project").val(ui.item.label);
+//logFields('event.prevValue', event.prevValue);
+		    if (prevValue != null) {
+
+		    removeClass(prevValue.link, 'current-selection-highlight');
+}
+		    prevValue=ui.item;
+		    addClass(ui.item.link, 'current-selection-highlight');
                     return false;
                 },
                 //                select: function(event, ui){
