@@ -1,7 +1,18 @@
 .ui-widget-content  a {color: #fff !important;}
 .ui-widget-content  a:hover {color: #4d4d4d !important;}
 .ui-widget-content a.ui-state-hover {color: #4d4d4d !important;}
-.ui-autocomplete {background: #000 !important; opacity:0.8 !important; z-index: 10002 !important; width: 240px !important;overflow: hidden !important; max-height: 200px !important; overflow-y: scroll !important}
+.ui-autocomplete {background: #000 !important; opacity:0.8 !important; z-index: 10002 !important; width: 240px !important;overflow: hidden !important; max-height: 200px !important; overflow-y: scroll !important;
+position:fixed !important;
+}
+
+.ui-autocomplete li a {
+font-size:12px !important;
+text-align:left !important;
+}
+
+.ui-autocomplete li {
+background:none !important;
+}
 .current-selection-highlight {
 cursor:pointer;
 margin:-2px -3px;
