@@ -180,6 +180,10 @@ function clickFunc(status) {
         $("#slider").animate({
             marginTop: "-47px"
         }, 500 );
+
+        if (prevValue != null) {
+            resetHighlight(prevValue);
+        }
     } else {
         $("#slider").animate({
             marginTop: "0px"
@@ -226,6 +230,10 @@ function logFields(objName, obj) {
 
 
 var prevValue=null;
+function resetHighlight(element){
+    element.link.removeClass('current-selection-highlight');
+}
+
 $("#project").autocomplete({
     minLength: 0,
     width:100,
@@ -235,7 +243,7 @@ $("#project").autocomplete({
     //logFields('event.prevValue', event.prevValue);
     if (prevValue != null) {
 
-    prevValue.link.removeClass('current-selection-highlight');
+    resetHighlight(prevValue);
     }
     prevValue=ui.item;
     ui.item.link.addClass('current-selection-highlight');
